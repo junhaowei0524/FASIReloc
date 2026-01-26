@@ -37,7 +37,7 @@ While the codebase is expected to be compatible with similar configurations, it 
 
 ```bash
 conda create -n fasireloc python=3.8 -y
-conda activate sgsloc
+conda activate fasireloc
 
 # Install PyTorch
 pip install torch==2.4.1 torchvision==0.19.1 torchaudio==2.4.1 \
