@@ -6,14 +6,7 @@ from .utils import get_state_dict
 
 
 class LPIPS(nn.Module):
-    r"""Creates a criterion that measures
-    Learned Perceptual Image Patch Similarity (LPIPS).
 
-    Arguments:
-        net_type (str): the network type to compare the features: 
-                        'alex' | 'squeeze' | 'vgg'. Default: 'alex'.
-        version (str): the version of LPIPS. Default: 0.1.
-    """
     def __init__(self, net_type: str = 'alex', version: str = '0.1'):
 
         assert version in ['0.1'], 'v0.1 is only supported now'
