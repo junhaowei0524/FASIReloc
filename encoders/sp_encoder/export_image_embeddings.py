@@ -47,7 +47,7 @@ class SuperPoint(nn.Module):
         """ Compute keypoints, scores, descriptors for image """
         # Shared Encoder
         # print(x.shape)
-        x = self.transform(x)  # 图像转为灰度图
+        x = self.transform(x)
         x = self.relu(self.conv1a(x))
         x = self.relu(self.conv1b(x))
         x = self.pool(x)
@@ -124,9 +124,9 @@ def main(args: argparse.Namespace) -> None:
 
         for t in targets:
             print(f"Processing '{t}'...")
-            img_name = t.split(os.sep)[-1]  # 提取图像名
-            image = cv2.imread(t)  # 加载图像
-            if image is None:  # 若加载失败,跳过该图像
+            img_name = t.split(os.sep)[-1]
+            image = cv2.imread(t)
+            if image is None:
                 print(f"Could not load '{t}' as an image, skipping...")
                 continue
             tensor_image = torch.from_numpy(np.array(image))

@@ -257,7 +257,7 @@ def calculate_generalizability(points3d, poses, vis_mask):
         pts = points3d[visible_points]  # [K,3]
         dirs = pts - cam_centers[v][None, :]  # [K,3]
         norms = np.linalg.norm(dirs, axis=1, keepdims=True)
-        dirs /= np.maximum(norms, 1e-8)  # 防止除零
+        dirs /= np.maximum(norms, 1e-8)
 
         bbT = np.einsum('ki,kj->kij', dirs, dirs)
         I_minus_bbT = np.eye(3, dtype=np.float32)[None, :, :] - bbT

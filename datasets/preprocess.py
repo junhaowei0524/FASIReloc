@@ -128,7 +128,6 @@ if __name__ == "__main__":
     hist_equalizer = cv2.createCLAHE(clipLimit=2.0, tileGridSize=(8, 8))
     masks = {}
 
-    # 图像预处理
     for key in tqdm(cam_extrinsics, desc="Prepocessing"):
         extr = cam_extrinsics[key]
         intr = cam_intrinsics[extr.camera_id]

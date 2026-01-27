@@ -24,7 +24,6 @@ from utils.camera_utils import loadCam
 class Scene:
     gaussians: GaussianModel
 
-    # 加载和配置基于高斯模型的3D点云场景
     def __init__(self, args: ModelParams, gaussians: GaussianModel, load_iteration=None, shuffle=True,
                  resolution_scales=[1.0], num=-1, images_to_read=None, preload_cameras=True):
         self.args = args
@@ -85,7 +84,7 @@ class Scene:
                     step_test = len(scene_info.test_cameras) // num
                     self.test_cameras[resolution_scale] = cameraList_from_camInfos(scene_info.test_cameras[::step_test],
                                                                                    resolution_scale, args)
-                else:  # 选择所有相机
+                else:
                     print("Loading Train Cameras")
                     self.train_cameras[resolution_scale] = cameraList_from_camInfos(scene_info.train_cameras,
                                                                                     resolution_scale,

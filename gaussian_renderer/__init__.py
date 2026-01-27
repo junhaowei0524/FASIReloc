@@ -22,16 +22,14 @@ from utils.graphics_utils import fov2focal
 def get_render_visible_mask(
         pc: GaussianModel, viewpoint_camera, width, height, **rasterize_args
 ):
-    scales = pc.get_scaling  # 缩放系数
+    scales = pc.get_scaling
 
-    # 获取高斯属性
     means3D = pc.get_xyz
     opacity = pc.get_opacity
     rotations = pc.get_rotation
     colors = pc.get_features  # [N, K, 3]
     sh_degree = pc.active_sh_degree
 
-    # 获取相机外参pose和内参K
     viewmat = viewpoint_camera.world_view_transform.transpose(0, 1).cuda()
     tanfovx = math.tan(viewpoint_camera.FoVx * 0.5)
     tanfovy = math.tan(viewpoint_camera.FoVy * 0.5)
@@ -139,7 +137,7 @@ def render_gsplat(
 
     # [1, H, W, 3] -> [3, H, W]
     rendered_image = render_colors[0].permute(2, 0, 1)
-    color = rendered_image  # 更新color参数
+    color = rendered_image
     radii = info["radii"].squeeze(0)  # [N,]
     visible_mask = radii > 0
     try:
