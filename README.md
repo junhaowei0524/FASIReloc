@@ -108,7 +108,9 @@ bash script/train_independent_megadepth_single.sh
 
 #### Scene-independent
 
-Evaluation can be conducted either with the model obtained from training or by directly using our [ScanNet](https://drive.google.com/drive/folders/1cQa8wgPy43a54k4q7xt1DTE5Kbmhdt0h?usp=drive_link) and [MegaDepth](https://drive.google.com/drive/folders/1FMeYzrVeUF4vk0-entjG3hN2b2xdTeWO?usp=drive_link) pre-trained model provided by us.
+Evaluation can be conducted either with the model obtained from training or by directly using our ScanNet and MegaDepth pre-trained model provided by us in the folder of map_scannet and map_megadepth.
+
+Evaluation can be done either with a trained model or by using our pre-trained ScanNet and MegaDepth models in the `pretrained` folders.
 
 ```bash
 # evaluate on 7 Scenes
