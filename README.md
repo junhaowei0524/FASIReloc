@@ -31,7 +31,7 @@ While the codebase is expected to be compatible with similar configurations, it 
 
 1. Clone the repository
 
-   ```
+   ```bash
    git clone https://github.com/junhaowei0524/FASIReloc.git  --recursive
    cd FASIReloc
    ```
@@ -126,4 +126,4 @@ bash script/evaluate_independent_cambridge.sh
 ## Note
 
 - This repository currently provides training and testing code for a subset of scenes under scene-independent conditions. The complete codebase and pre-trained models will be released upon acceptance of the paper.
-- AR demonstration videos for some scenes can be found in the Supplementary Material.
+- AR demonstration videos for some scenes and more details can be found in the Supplementary Material.
